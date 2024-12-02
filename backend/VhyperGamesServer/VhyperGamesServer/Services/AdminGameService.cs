@@ -38,7 +38,7 @@ public class AdminGameService
         for (int i = 0; i < images.Count; i++)
         {
 
-            string altText = images[i].Name;
+            string altText = images[i].Name + "_" + i;
 
             if (alt != null && alt[i] != null)
             {
@@ -116,7 +116,7 @@ public class AdminGameService
             game.Price = adminFormGameDto.Price;
         }
 
-        if (adminFormGameDto.Stock != 0 && adminFormGameDto.Stock != game.Stock)
+        if (adminFormGameDto.Stock != game.Stock)
         {
             game.Stock = adminFormGameDto.Stock;
         }
